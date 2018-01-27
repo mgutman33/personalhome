@@ -9,15 +9,49 @@ body{
     font-family: 'Catamaran', sans-serif;
 }
 
-.row{
-    border-top: 1px solid gray;
-    height: 150px;
-    @media (min-width: $md){
-        height: 22vh;
-    }
-    .col{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+img{
+    max-width: 100%;
+}
+
+//Home page
+.home-banners{
+    .row{
+        position: relative;
+        overflow: hidden;
+        border-top: 1px solid gray;
+        height: 150px;
+        @media (min-width: $md){
+            height: 22vh;
+        }
+        img.banner-bg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+        }
+        .banner-cover{
+            height: 100%;
+            width: 100%;
+            background: black;
+            opacity: .7;
+            position: absolute;
+            z-index: 110;
+        }
+        .col{
+            padding: 0px;
+            a.banner-link{
+                overflow: hidden;
+                display: block;
+                height: 100%;
+                width: 100%;
+                .banner-headline{
+                    position: relative;
+                    z-index: 200;
+                    width: 50%;
+                    margin: auto;
+                }
+            }
+        }
     }
 }

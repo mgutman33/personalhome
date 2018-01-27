@@ -1,13 +1,39 @@
 body {
   font-family: 'Catamaran', sans-serif; }
 
-.row {
+img {
+  max-width: 100%; }
+
+.home-banners .row {
+  position: relative;
+  overflow: hidden;
   border-top: 1px solid gray;
   height: 150px; }
   @media (min-width: 768px) {
-    .row {
+    .home-banners .row {
       height: 22vh; } }
-  .row .col {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+  .home-banners .row img.banner-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100; }
+  .home-banners .row .banner-cover {
+    height: 100%;
+    width: 100%;
+    background: black;
+    opacity: .7;
+    position: absolute;
+    z-index: 110; }
+  .home-banners .row .col {
+    padding: 0px; }
+    .home-banners .row .col a.banner-link {
+      overflow: hidden;
+      display: block;
+      height: 100%;
+      width: 100%; }
+      .home-banners .row .col a.banner-link .banner-headline {
+        position: relative;
+        z-index: 200;
+        width: 50%;
+        margin: auto; }
