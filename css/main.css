@@ -1,2 +1,13 @@
-.container-fluid {
-  background: blue; }
+body {
+  font-family: 'Catamaran', sans-serif; }
+
+.row {
+  border-top: 1px solid gray;
+  height: 150px; }
+  @media (min-width: 768px) {
+    .row {
+      height: 22vh; } }
+  .row .col {
+    display: flex;
+    justify-content: center;
+    align-items: center; }

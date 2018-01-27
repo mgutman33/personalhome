@@ -1,3 +1,23 @@
-.container-fluid{
-    background: blue;
+//Variables
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+//General Styles
+body{
+    font-family: 'Catamaran', sans-serif;
+}
+
+.row{
+    border-top: 1px solid gray;
+    height: 150px;
+    @media (min-width: $md){
+        height: 22vh;
+    }
+    .col{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
