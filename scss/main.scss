@@ -23,33 +23,65 @@ img{
         @media (min-width: $md){
             height: 22vh;
         }
-        img.banner-bg{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 100;
-        }
-        .banner-cover{
-            height: 100%;
-            width: 100%;
-            background: black;
-            opacity: .7;
-            position: absolute;
-            z-index: 110;
-        }
         .col{
             padding: 0px;
             a.banner-link{
                 overflow: hidden;
-                display: block;
+                display: flex;
                 height: 100%;
                 width: 100%;
+                position: relative;
+                z-index: 200;
+                img.banner-bg{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 100;
+                    max-width: 120%;
+                    width: 100%;
+                    transition: width 1s;
+                }
+                .banner-cover{
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(0,0,0,.7);
+                    position: absolute;
+                    z-index: 110;
+                    transition: background 1s;
+                }
                 .banner-headline{
                     position: relative;
-                    z-index: 200;
-                    width: 50%;
+                    z-index: 210;
+                    text-align: center;
                     margin: auto;
+                    color: white;
+                    text-shadow: 2px 2px 5px rgba(0,0,0,.7);
+                    transition: text-shadow 1s;
+                    @media (min-width: $md){
+                        width: 50%;
+                        text-align: left;
+                    }
+                }
+                //All parts on hover.
+                &:hover{
+                    //The <a>
+                    text-decoration: none;
+
+                    //banner-cover
+                    .banner-cover{
+                        background: rgba(0,0,0,.4);
+                    }
+
+                    //The img
+                    img.banner-bg{
+                        width: 120%;
+                    }
+
+                    //The .banner-headline
+                    .banner-headline{
+                        text-shadow: 2px 2px 5px rgba(0,0,0,.9);
+                    }
                 }
             }
         }

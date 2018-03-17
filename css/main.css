@@ -12,28 +12,48 @@ img {
   @media (min-width: 768px) {
     .home-banners .row {
       height: 22vh; } }
-  .home-banners .row img.banner-bg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 100; }
-  .home-banners .row .banner-cover {
-    height: 100%;
-    width: 100%;
-    background: black;
-    opacity: .7;
-    position: absolute;
-    z-index: 110; }
   .home-banners .row .col {
     padding: 0px; }
     .home-banners .row .col a.banner-link {
       overflow: hidden;
-      display: block;
+      display: flex;
       height: 100%;
-      width: 100%; }
+      width: 100%;
+      position: relative;
+      z-index: 200; }
+      .home-banners .row .col a.banner-link img.banner-bg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        max-width: 120%;
+        width: 100%;
+        transition: width 1s; }
+      .home-banners .row .col a.banner-link .banner-cover {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        z-index: 110;
+        transition: background 1s; }
       .home-banners .row .col a.banner-link .banner-headline {
         position: relative;
-        z-index: 200;
-        width: 50%;
-        margin: auto; }
+        z-index: 210;
+        text-align: center;
+        margin: auto;
+        color: white;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        transition: text-shadow 1s; }
+        @media (min-width: 768px) {
+          .home-banners .row .col a.banner-link .banner-headline {
+            width: 50%;
+            text-align: left; } }
+      .home-banners .row .col a.banner-link:hover {
+        text-decoration: none; }
+        .home-banners .row .col a.banner-link:hover .banner-cover {
+          background: rgba(0, 0, 0, 0.4); }
+        .home-banners .row .col a.banner-link:hover img.banner-bg {
+          width: 120%; }
+        .home-banners .row .col a.banner-link:hover .banner-headline {
+          text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9); }
